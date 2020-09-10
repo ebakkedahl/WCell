@@ -59,11 +59,6 @@ namespace WCell.RealmServer.AreaTriggers
         /// </summary>
         public uint TriggerQuestId;
 
-        /// <summary>
-        /// Unused
-        /// </summary>
-        public string RequiredFailedText;
-
         public uint RequiredLevel;
 
         [NotPersistent]

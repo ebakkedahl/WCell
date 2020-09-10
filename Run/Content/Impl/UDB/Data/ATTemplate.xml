@@ -13,7 +13,7 @@
     <Flat Name="RequiredHeroicKey2Id" Column="heroic_key2" />
     <Flat Name="RequiredQuestId" Column="required_quest_done" />
 
-    <Flat Name="RequiredFailedText" Column="required_failed_text" />
+
     <Flat Name="TargetMap" Column="target_map" />
     <Nested Name="TargetPos">
       <Flat Name="X" Column="target_position_x" />

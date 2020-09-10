@@ -39,11 +39,15 @@ ECHO		Please type the letter for the option:
 ECHO.
 ECHO		 e = Extract UDB
 ECHO		 i = Install UDB
-ECHO		 c = Install all Changesets (402, 403, 404)
+ECHO		 c = Install all Changesets (402, 403, 404, 405, 406, 407, 408)
 ECHO.
 ECHO		 402 = Install Changeset 402
-ECHO         403 = Install Changeset 403
-ECHO         404 = Install Changeset 404
+ECHO		 403 = Install Changeset 403
+ECHO		 404 = Install Changeset 404
+ECHO		 405 = Install Changeset 405
+ECHO		 406 = Install Changeset 406
+ECHO		 407 = Install Changeset 407
+ECHO		 408 = Install Changeset 408
 ECHO.
 ECHO.
 ECHO		 x - Exit
@@ -62,6 +66,10 @@ if %l%==X GOTO cleanup
 if "%l%"=="402" GOTO changeset402
 if "%l%"=="403" GOTO changeset403
 if "%l%"=="404" GOTO changeset404
+if "%l%"=="405" GOTO changeset405
+if "%l%"=="406" GOTO changeset406
+if "%l%"=="407" GOTO changeset407
+if "%l%"=="408" GOTO changeset408
 GOTO error-menu
 
 :import
@@ -94,6 +102,20 @@ ECHO   [Importing] UDB database changeset 404...
 mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\404_corepatch_mangos_11841_to_11928.sql
 ECHO   [Importing] UDB updatepack 404...
 mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\404_updatepack_mangos.sql
+ECHO   [Importing] UDB database changeset 405...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\405_corepatch_mangos_11929_to_12111.sql
+ECHO   [Importing] UDB updatepack 405...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\405_updatepack_mangos.sql
+ECHO   [Importing] UDB database changeset 406...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\406_corepatch_mangos_12112_to_12444.sql
+ECHO   [Importing] UDB updatepack 406...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\406_updatepack_mangos.sql
+ECHO   [Importing] UDB database changeset 407...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\407_corepatch_mangos_12445_to_12670.sql
+ECHO   [Importing] UDB updatepack 407...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\407_updatepack_mangos.sql
+ECHO   [Importing] UDB updatepack 408...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\408_updatepack_mangos.sql
 ECHO [Importing] Finished
 ECHO.
 PAUSE
@@ -136,6 +158,60 @@ ECHO [Importing] UDB database changeset 404...
 mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\404_corepatch_mangos_11841_to_11928.sql
 ECHO [Importing] UDB updatepack 404...
 mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\404_updatepack_mangos.sql
+ECHO [Importing] Finished
+ECHO.
+PAUSE
+GOTO menu
+
+:changeset405
+CLS
+ECHO.
+ECHO.
+ECHO Started...
+ECHO   [Importing] UDB database changeset 405...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\405_corepatch_mangos_11929_to_12111.sql
+ECHO   [Importing] UDB updatepack 405...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\405_updatepack_mangos.sql
+ECHO [Importing] Finished
+ECHO.
+PAUSE
+GOTO menu
+
+:changeset406
+CLS
+ECHO.
+ECHO.
+ECHO Started...
+ECHO   [Importing] UDB database changeset 406...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\406_corepatch_mangos_12112_to_12444.sql
+ECHO   [Importing] UDB updatepack 406...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\406_updatepack_mangos.sql
+ECHO [Importing] Finished
+ECHO.
+PAUSE
+GOTO menu
+
+:changeset407
+CLS
+ECHO.
+ECHO.
+ECHO Started...
+ECHO   [Importing] UDB database changeset 407...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\407_corepatch_mangos_12445_to_12670.sql
+ECHO   [Importing] UDB updatepack 407...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\407_updatepack_mangos.sql
+ECHO [Importing] Finished
+ECHO.
+PAUSE
+GOTO menu
+
+:changeset408
+CLS
+ECHO.
+ECHO.
+ECHO Started...
+ECHO   [Importing] UDB updatepack 408...
+mysql -h %server% --user=%user% --password=%pass% --port=%port% %wdb% < %udbdir%\Updates\0.12.2_additions\408_updatepack_mangos.sql
 ECHO [Importing] Finished
 ECHO.
 PAUSE
